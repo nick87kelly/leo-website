@@ -359,7 +359,9 @@ height:0;
 }
 
 #video-title{
-  float: left
+  float: left;
+  overflow: auto;
+  text-wrap:nowrap;
 }
 
 i{
@@ -389,6 +391,7 @@ i{
   align-items: center;
   display:flex;
   padding:0;
+  box-shadow: 0 0 5px #C0C0C0;
 }
 
 #video-header-controls{display:flex;}
