@@ -19,9 +19,7 @@ function Video(props) {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [resizeLogo, setResizeLogo] = useState("expand_less");
-  const [maxWidth, setMaxWidth] = useState("50vw");
   const [width, setWidth] = useState("0");
-  const [height, setHeight] = useState("0");
   const [canPlay, setCanPlay] = useState(false);
 
   const handleProgress = (e) => {
@@ -32,10 +30,10 @@ function Video(props) {
 
   const handleResize = () => {
     if (resizeLogo === "expand_less") {
-      setMaxWidth("0");
+      setWidth("0");
       setResizeLogo("expand_more");
     } else {
-      setMaxWidth("50vw");
+      setWidth("90%");
       setResizeLogo("expand_less");
     }
   };
@@ -89,7 +87,7 @@ function Video(props) {
       </div>
       {!canPlay && <p id="video-loader">Loading...</p>}
       <video
-        style={{ maxWidth: maxWidth, width: width, height: height }}
+        style={{ width: width }}
         id="video"
         playsInline
         loop
@@ -98,8 +96,7 @@ function Video(props) {
         ref={videoRef}
         onCanPlayThrough={() => {
           setCanPlay(true);
-          setWidth("auto");
-          setHeight("auto");
+          setWidth("90%");
         }}
       >
         <source src={props.url} />

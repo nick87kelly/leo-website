@@ -1,13 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import FileComponent from "./FileComponent";
-import Video from "./Video";
-import Photo from "./Photo";
 
 const MainSection = (props) => {
-  const [url, setUrl] = useState(null);
-  const [title, setTitle] = useState(null);
-  const [video, setVideo] = useState(false);
-  const [photo, setPhoto] = useState(false);
   return (
     <>
       <div id="main-section">
@@ -22,17 +16,17 @@ const MainSection = (props) => {
               >
                 {tab === "Videos" ? (
                   <FileComponent
-                    url={setUrl}
-                    title={setTitle}
-                    showPhoto={setPhoto}
-                    playVideo={setVideo}
+                    setUrl={props.setUrl}
+                    setTitle={props.setTitle}
+                    showPhoto={props.showPhoto}
+                    playVideo={props.playVideo}
                     type="video"
                   />
                 ) : tab === "Photos" ? (
                   <FileComponent
-                    url={setUrl}
-                    showPhoto={setPhoto}
-                    playVideo={setVideo}
+                    setUrl={props.setUrl}
+                    showPhoto={props.showPhoto}
+                    playVideo={props.playVideo}
                     type="photo"
                   />
                 ) : (
@@ -51,21 +45,6 @@ const MainSection = (props) => {
           })}
         </div>
       </div>
-      {video ? (
-        <Video
-          url={url}
-          title={title}
-          showPhoto={setPhoto}
-          playVideo={setVideo}
-        />
-      ) : (
-        <></>
-      )}
-      {photo ? (
-        <Photo url={url} showPhoto={setPhoto} playVideo={setVideo} />
-      ) : (
-        <></>
-      )}
     </>
   );
 };

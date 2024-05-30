@@ -3,6 +3,52 @@
   src: url(./assets/misc/MS-Sans-Serif-8pt.ttf);
 }
 
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/misc/OutlineFont.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/misc/IconFont.woff2) format('woff2');
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
 * {
   font-family: mainFont;
   color:white;
@@ -275,10 +321,12 @@ div, .profile-pic {
 }
 
 #video-container{
+  
   touch-action: none;
-  max-width:60vw;
-  max-height:80vh;
-  min-width:50vw;
+  width:fit-content;
+  max-width:60%;
+  min-width:60%;
+  height:fit-content;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -293,6 +341,7 @@ div, .profile-pic {
   align-items: center;
   z-index: 10;
 }
+
 
 #video-controls{
   display:flex;
@@ -346,10 +395,8 @@ progress::-webkit-progress-value {
   /* box-shadow: 0 0 10px #0a0a0a; */
   box-shadow: 0 0 10px #C0C0C0;
 border-radius: 4px;
-transition: max-width 0.2s ease;
-max-height:50vh;
+transition: width 0.2s ease;
 width:0;
-height:0;
 }
 
 #video-header{
@@ -425,8 +472,8 @@ z-index: 1;
 
 #photo-container{
   touch-action: none;
-  max-width:60vw;
-  max-height:80vh;
+  width:fit-content;
+  height:fit-content;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -445,8 +492,8 @@ z-index: 1;
 #selected-photo{
   margin-bottom:5px;
   padding:0;
-  max-height:70vh;
-  max-width:50vw;
+  max-height: 80vh;
+  max-width: 55vw;
   box-shadow: 0 0 10px #C0C0C0;
   border-radius: 4px;
 }

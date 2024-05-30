@@ -18,19 +18,19 @@ function FileComponent(props) {
     "sinCity-flyAway.mp4",
   ];
   function handleVideoClick(t, u) {
-    props.showPhoto(false);
     props.playVideo(true);
-    props.title(t);
-    props.url(u);
+    props.showPhoto(false);
+    props.setTitle(t);
+    props.setUrl(u);
     Array.from(document.querySelectorAll(".file-name")).forEach(function (el) {
       el.classList.remove("active");
     });
     document.getElementById(t).classList.add("active");
   }
   function handlePhotoClick(u) {
-    props.playVideo(false);
     props.showPhoto(true);
-    props.url(u);
+    props.playVideo(false);
+    props.setUrl(u);
     Array.from(document.querySelectorAll(".file-name")).forEach(function (el) {
       el.classList.remove("active");
     });
