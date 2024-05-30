@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/leo-website/static/css/main.5c974464.css",
-    "main.js": "/leo-website/static/js/main.c92212a1.js",
+    "main.css": "/leo-website/static/css/main.2f9d5c70.css",
+    "main.js": "/leo-website/static/js/main.069f3743.js",
     "static/js/592.1c8d275f.chunk.js": "/leo-website/static/js/592.1c8d275f.chunk.js",
     "static/media/nettspend2.mp4": "/leo-website/static/media/nettspend2.cadbacc9761dc14779e9.mp4",
     "static/media/freddieGibbs.mp4": "/leo-website/static/media/freddieGibbs.d55d83dba2d6b99ad664.mp4",
@@ -39,6 +39,7 @@
     "static/media/MS-Sans-Serif-8pt.ttf": "/leo-website/static/media/MS-Sans-Serif-8pt.aa14e7b110864a3c2e08.ttf",
     "static/media/21.jpg": "/leo-website/static/media/21.fd8ff4fb5a06151940ff.jpg",
     "static/media/20.jpg": "/leo-website/static/media/20.60f425634ad43d1c2239.jpg",
+    "static/media/OutlineFont.woff2": "/leo-website/static/media/OutlineFont.3a1e0f5c49e7a8d52033.woff2",
     "static/media/17.jpg": "/leo-website/static/media/17.dd9dd3f371394d4039e5.jpg",
     "static/media/22.jpg": "/leo-website/static/media/22.97d0a26868415aa8bcca.jpg",
     "static/media/15.jpg": "/leo-website/static/media/15.1e8997deeb6710e04ab6.jpg",
@@ -47,6 +48,7 @@
     "static/media/bg2.mp4": "/leo-website/static/media/bg2.64360d9c7dc225c4d8a5.mp4",
     "static/media/16.jpg": "/leo-website/static/media/16.99be8ce4955aa3cd94f9.jpg",
     "static/media/23.jpg": "/leo-website/static/media/23.b89842420044dcc29423.jpg",
+    "static/media/IconFont.woff2": "/leo-website/static/media/IconFont.0c35d18bf06992036b69.woff2",
     "static/media/19.jpg": "/leo-website/static/media/19.027a0e289b97541fefca.jpg",
     "static/media/default.png": "/leo-website/static/media/default.ca5cc9cd80c2d44bcf1c.png",
     "static/media/bg10.gif": "/leo-website/static/media/bg10.78ff551cf87f3cb21371.gif",
@@ -54,12 +56,12 @@
     "static/media/bg10.mp4": "/leo-website/static/media/bg10.8bea5b7e2259d1682c60.mp4",
     "static/media/bg7.mp4": "/leo-website/static/media/bg7.72844e638c0550dcd234.mp4",
     "index.html": "/leo-website/index.html",
-    "main.5c974464.css.map": "/leo-website/static/css/main.5c974464.css.map",
-    "main.c92212a1.js.map": "/leo-website/static/js/main.c92212a1.js.map",
+    "main.2f9d5c70.css.map": "/leo-website/static/css/main.2f9d5c70.css.map",
+    "main.069f3743.js.map": "/leo-website/static/js/main.069f3743.js.map",
     "592.1c8d275f.chunk.js.map": "/leo-website/static/js/592.1c8d275f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5c974464.css",
-    "static/js/main.c92212a1.js"
+    "static/css/main.2f9d5c70.css",
+    "static/js/main.069f3743.js"
   ]
 }
