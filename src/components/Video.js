@@ -19,7 +19,7 @@ function Video(props) {
   const [progress, setProgress] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [resizeLogo, setResizeLogo] = useState("expand_less");
+  const [resizeLogo, setResizeLogo] = useState("expand_more");
   const [width, setWidth] = useState("0");
   const [canPlay, setCanPlay] = useState(false);
 
@@ -97,7 +97,9 @@ function Video(props) {
         ref={videoRef}
         onCanPlayThrough={() => {
           setCanPlay(true);
-          setWidth("90%");
+          if (resizeLogo === "expand_more") {
+            handleResize();
+          }
         }}
       >
         <source src={props.url} />
