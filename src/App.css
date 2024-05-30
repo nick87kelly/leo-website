@@ -1,6 +1,7 @@
 @font-face {
   font-family: mainFont;
   src: url(./assets/misc/MS-Sans-Serif-8pt.ttf);
+  font-display: block;
 }
 
 @font-face {
@@ -8,6 +9,7 @@
   font-style: normal;
   font-weight: 400;
   src: url(./assets/misc/OutlineFont.woff2) format('woff2');
+  font-display: block;
 }
 
 @font-face {
@@ -15,6 +17,7 @@
   font-style: normal;
   font-weight: 400;
   src: url(./assets/misc/IconFont.woff2) format('woff2');
+  font-display: block;
 }
 
 .material-symbols-outlined {
@@ -321,7 +324,6 @@ div, .profile-pic {
 }
 
 #video-container{
-  
   touch-action: none;
   width:fit-content;
   max-width:60%;
