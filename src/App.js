@@ -15,6 +15,7 @@ const App = () => {
   const [title, setTitle] = useState(null);
   const [video, setVideo] = useState(false);
   const [photo, setPhoto] = useState(false);
+  const [yt, setYt] = useState("");
   return (
     <div className="body" id="main-container">
       <HeaderSection></HeaderSection>
@@ -27,13 +28,18 @@ const App = () => {
         setTitle={setTitle}
         showPhoto={setPhoto}
         playVideo={setVideo}
+        setYt={setYt}
       ></MainSection>
       <TabSection
         curr={currentTab}
         setCurr={setCurrentTab}
         tabs={tabs}
       ></TabSection>
-      {video ? <Video url={url} title={title} playVideo={setVideo} /> : <></>}
+      {video ? (
+        <Video url={url} title={title} yt={yt} playVideo={setVideo} />
+      ) : (
+        <></>
+      )}
       {photo ? <Photo url={url} showPhoto={setPhoto} /> : <></>}
     </div>
   );

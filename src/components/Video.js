@@ -7,7 +7,8 @@ function Video(props) {
   const videoRef = useRef();
   const visualizerRef = useRef();
   const handleYoutube = () => {
-    console.log("yotube");
+    window.open(props.yt, "_blank");
+    return false;
   };
   const handlePlay = () => {
     videoRef.current.play();

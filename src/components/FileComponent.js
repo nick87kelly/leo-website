@@ -17,11 +17,25 @@ function FileComponent(props) {
     "sinCity-getBack.mp4",
     "sinCity-flyAway.mp4",
   ];
-  function handleVideoClick(t, u) {
+  const ytArray = [
+    "https://www.youtube.com/watch?v=BMx9TKez03E",
+    "https://www.youtube.com/watch?v=ohf6Bva5jNA",
+    "https://www.youtube.com/watch?v=ohf6Bva5jNA",
+    "https://www.youtube.com/watch?v=2xXJpM2BoNE",
+    "https://www.youtube.com/watch?v=2xXJpM2BoNE",
+    "https://www.youtube.com/watch?v=5Pdjlu48Zr8",
+    "https://www.youtube.com/watch?v=AjWSlrg21Yg",
+    "https://www.youtube.com/watch?v=qkFVYFNp4sQ",
+    "https://www.youtube.com/watch?v=SKjHMHsbvAQ",
+    "https://www.youtube.com/watch?v=0Q99LJfdGVg",
+    "https://www.youtube.com/watch?v=leOS709UPys",
+  ];
+  function handleVideoClick(t, yt, u) {
     props.playVideo(true);
     props.showPhoto(false);
     props.setTitle(t);
     props.setUrl(u);
+    props.setYt(yt);
     Array.from(document.querySelectorAll(".file-name")).forEach(function (el) {
       el.classList.remove("active");
     });
@@ -50,6 +64,7 @@ function FileComponent(props) {
                 onClick={(e) => {
                   handleVideoClick(
                     videoArray[i],
+                    ytArray[i],
                     require(`../assets/videos/${videoArray[i]}`)
                   );
                 }}

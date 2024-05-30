@@ -20,6 +20,7 @@ const MainSection = (props) => {
                     setTitle={props.setTitle}
                     showPhoto={props.showPhoto}
                     playVideo={props.playVideo}
+                    setYt={props.setYt}
                     type="video"
                   />
                 ) : tab === "Photos" ? (
