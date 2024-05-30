@@ -120,6 +120,19 @@ div, .profile-pic {
   -o-animation: fadeinout 1s linear infinite;
 }
 
+#default-loader{
+  position:absolute;
+  width: 25%;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  animation: load 1s linear infinite;
+  -webkit-animation: load 1s linear infinite;
+  -moz-animation: load 1s linear infinite;
+  -o-animation: load 1s linear infinite;
+}
+
 #left-body {
   background-color: #292929;
   box-shadow: 0 0 10px #0a0a0a;
@@ -634,6 +647,22 @@ text-align: left;
   100% { opacity:1; }
 }
 
+@keyframes load {
+  50%   { opacity:1; }
+  0%,100% { opacity:0; }
+}
+@-o-keyframes load{
+  50%   { opacity:1; }
+  0%,100% { opacity:0; }
+}
+@-moz-keyframes load{
+  50%   { opacity:1; }
+  0%,100% { opacity:0; }
+}
+@-webkit-keyframes load{
+  50%   { opacity:1; }
+  0%,100% { opacity:0; }
+}
 
 @media (max-width:650px){
   .tab {
