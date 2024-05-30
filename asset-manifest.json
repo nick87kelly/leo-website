@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/leo-website/static/css/main.48c0843c.css",
+    "main.css": "/leo-website/static/css/main.94797e86.css",
     "main.js": "/leo-website/static/js/main.069f3743.js",
     "static/js/592.1c8d275f.chunk.js": "/leo-website/static/js/592.1c8d275f.chunk.js",
     "static/media/nettspend2.mp4": "/leo-website/static/media/nettspend2.cadbacc9761dc14779e9.mp4",
@@ -56,12 +56,12 @@
     "static/media/bg10.mp4": "/leo-website/static/media/bg10.8bea5b7e2259d1682c60.mp4",
     "static/media/bg7.mp4": "/leo-website/static/media/bg7.72844e638c0550dcd234.mp4",
     "index.html": "/leo-website/index.html",
-    "main.48c0843c.css.map": "/leo-website/static/css/main.48c0843c.css.map",
+    "main.94797e86.css.map": "/leo-website/static/css/main.94797e86.css.map",
     "main.069f3743.js.map": "/leo-website/static/js/main.069f3743.js.map",
     "592.1c8d275f.chunk.js.map": "/leo-website/static/js/592.1c8d275f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.48c0843c.css",
+    "static/css/main.94797e86.css",
     "static/js/main.069f3743.js"
   ]
 }
