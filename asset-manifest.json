@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/leo-website/static/css/main.f2467141.css",
-    "main.js": "/leo-website/static/js/main.705546fb.js",
+    "main.css": "/leo-website/static/css/main.5b20094f.css",
+    "main.js": "/leo-website/static/js/main.1c814025.js",
     "static/js/592.1c8d275f.chunk.js": "/leo-website/static/js/592.1c8d275f.chunk.js",
     "static/media/nettspend2.mp4": "/leo-website/static/media/nettspend2.cadbacc9761dc14779e9.mp4",
     "static/media/freddieGibbs.mp4": "/leo-website/static/media/freddieGibbs.d55d83dba2d6b99ad664.mp4",
@@ -15,6 +15,7 @@
     "static/media/nettspend.mp4": "/leo-website/static/media/nettspend.a8965752f77e249dc66d.mp4",
     "static/media/shedTheory.mp4": "/leo-website/static/media/shedTheory.ccfeff22a681ab14282f.mp4",
     "static/media/man3.jpg": "/leo-website/static/media/man3.05af51766a3031667fe9.jpg",
+    "static/media/face.webm": "/leo-website/static/media/face.ffaaaa69e8932a574cea.webm",
     "static/media/2.jpg": "/leo-website/static/media/2.d13c39aaea2fddb6c962.jpg",
     "static/media/10.jpg": "/leo-website/static/media/10.180a8a05a6ac71f03e33.jpg",
     "static/media/1.jpg": "/leo-website/static/media/1.ccc94d1b8b119fa8fbc5.jpg",
@@ -54,14 +55,13 @@
     "static/media/bg10.gif": "/leo-website/static/media/bg10.78ff551cf87f3cb21371.gif",
     "static/media/bg6.gif": "/leo-website/static/media/bg6.37e53d913e7f7c60567e.gif",
     "static/media/bg10.mp4": "/leo-website/static/media/bg10.8bea5b7e2259d1682c60.mp4",
-    "static/media/bg7.mp4": "/leo-website/static/media/bg7.72844e638c0550dcd234.mp4",
     "index.html": "/leo-website/index.html",
-    "main.f2467141.css.map": "/leo-website/static/css/main.f2467141.css.map",
-    "main.705546fb.js.map": "/leo-website/static/js/main.705546fb.js.map",
+    "main.5b20094f.css.map": "/leo-website/static/css/main.5b20094f.css.map",
+    "main.1c814025.js.map": "/leo-website/static/js/main.1c814025.js.map",
     "592.1c8d275f.chunk.js.map": "/leo-website/static/js/592.1c8d275f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f2467141.css",
-    "static/js/main.705546fb.js"
+    "static/css/main.5b20094f.css",
+    "static/js/main.1c814025.js"
   ]
 }
