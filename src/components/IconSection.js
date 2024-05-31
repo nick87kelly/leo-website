@@ -29,11 +29,12 @@ const IconSection = () => {
       >
         <source src={logo}></source>
       </video>
-      <img ref={sparkleRef} src={sparkle} id="icon-sparkle" />
+      <img ref={sparkleRef} src={sparkle} id="icon-sparkle" alt="uh oh" />
       <img
         src={defaultLogo}
         style={{ display: loader ? "block" : "none" }}
-        id="default-loader"
+        className="default-loader"
+        alt="uh oh"
       />
     </div>
   );

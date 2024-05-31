@@ -72,6 +72,7 @@ const LeftSection = () => {
                   ? require(`../assets/profilePics/${profilePics[i]}`)
                   : require("../assets/profilePics/default.png")
               }
+              alt="uh oh"
             />
             <div className="post-details">
               <p className="username">

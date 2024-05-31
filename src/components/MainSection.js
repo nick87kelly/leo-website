@@ -1,5 +1,6 @@
 import React from "react";
 import FileComponent from "./FileComponent";
+import Contact from "./Contact";
 
 const MainSection = (props) => {
   return (
@@ -31,15 +32,7 @@ const MainSection = (props) => {
                     type="photo"
                   />
                 ) : (
-                  <>
-                    {/* <div className="contact-filter-overlay"></div> */}
-                    <video playsInline autoPlay muted loop id="myVideo">
-                      <source
-                        src={require("../assets/misc/bg7.mp4")}
-                        type="video/mp4"
-                      />
-                    </video>
-                  </>
+                  <Contact />
                 )}
               </div>
             );
