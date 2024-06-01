@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/leo-website/static/css/main.ee25eced.css",
-    "main.js": "/leo-website/static/js/main.2ee900db.js",
+    "main.css": "/leo-website/static/css/main.a9a74335.css",
+    "main.js": "/leo-website/static/js/main.6ef77f89.js",
     "static/js/592.1c8d275f.chunk.js": "/leo-website/static/js/592.1c8d275f.chunk.js",
     "static/media/nettspend2.mp4": "/leo-website/static/media/nettspend2.cadbacc9761dc14779e9.mp4",
     "static/media/freddieGibbs.mp4": "/leo-website/static/media/freddieGibbs.d55d83dba2d6b99ad664.mp4",
@@ -60,12 +60,12 @@
     "static/media/bg6.gif": "/leo-website/static/media/bg6.37e53d913e7f7c60567e.gif",
     "static/media/bg10.mp4": "/leo-website/static/media/bg10.8bea5b7e2259d1682c60.mp4",
     "index.html": "/leo-website/index.html",
-    "main.ee25eced.css.map": "/leo-website/static/css/main.ee25eced.css.map",
-    "main.2ee900db.js.map": "/leo-website/static/js/main.2ee900db.js.map",
+    "main.a9a74335.css.map": "/leo-website/static/css/main.a9a74335.css.map",
+    "main.6ef77f89.js.map": "/leo-website/static/js/main.6ef77f89.js.map",
     "592.1c8d275f.chunk.js.map": "/leo-website/static/js/592.1c8d275f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ee25eced.css",
-    "static/js/main.2ee900db.js"
+    "static/css/main.a9a74335.css",
+    "static/js/main.6ef77f89.js"
   ]
 }
