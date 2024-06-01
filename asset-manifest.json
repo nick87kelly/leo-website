@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/leo-website/static/css/main.3a6128f6.css",
-    "main.js": "/leo-website/static/js/main.e73204cf.js",
+    "main.css": "/leo-website/static/css/main.a10ad75c.css",
+    "main.js": "/leo-website/static/js/main.2ee900db.js",
     "static/js/592.1c8d275f.chunk.js": "/leo-website/static/js/592.1c8d275f.chunk.js",
     "static/media/nettspend2.mp4": "/leo-website/static/media/nettspend2.cadbacc9761dc14779e9.mp4",
     "static/media/freddieGibbs.mp4": "/leo-website/static/media/freddieGibbs.d55d83dba2d6b99ad664.mp4",
@@ -31,6 +31,8 @@
     "static/media/4.jpg": "/leo-website/static/media/4.58b26606e52030815c93.jpg",
     "static/media/man2.jpg": "/leo-website/static/media/man2.f161a2fda14b8b1c4989.jpg",
     "static/media/6.jpg": "/leo-website/static/media/6.e3533053419998cc86a9.jpg",
+    "static/media/leftFingerprint.png": "/leo-website/static/media/leftFingerprint.dc284704e0415efb6a8d.png",
+    "static/media/rightFingerprint.png": "/leo-website/static/media/rightFingerprint.c4f456a8c2ec163babfd.png",
     "static/media/man.jpg": "/leo-website/static/media/man.8e4ec6aafcfcd7bc03a6.jpg",
     "static/media/man4.jpg": "/leo-website/static/media/man4.0396eaa5a404d9fe23f5.jpg",
     "static/media/dna.webm": "/leo-website/static/media/dna.13235b596c6dfd038ad5.webm",
@@ -58,12 +60,12 @@
     "static/media/bg6.gif": "/leo-website/static/media/bg6.37e53d913e7f7c60567e.gif",
     "static/media/bg10.mp4": "/leo-website/static/media/bg10.8bea5b7e2259d1682c60.mp4",
     "index.html": "/leo-website/index.html",
-    "main.3a6128f6.css.map": "/leo-website/static/css/main.3a6128f6.css.map",
-    "main.e73204cf.js.map": "/leo-website/static/js/main.e73204cf.js.map",
+    "main.a10ad75c.css.map": "/leo-website/static/css/main.a10ad75c.css.map",
+    "main.2ee900db.js.map": "/leo-website/static/js/main.2ee900db.js.map",
     "592.1c8d275f.chunk.js.map": "/leo-website/static/js/592.1c8d275f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3a6128f6.css",
-    "static/js/main.e73204cf.js"
+    "static/css/main.a10ad75c.css",
+    "static/js/main.2ee900db.js"
   ]
 }
