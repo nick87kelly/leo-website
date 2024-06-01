@@ -156,7 +156,7 @@ div, .profile-pic {
 #left-section {
   grid-column: 1;
   grid-row: 3;
-  min-height: 200px;
+  min-height: 350px;
   background-color: #292929;
   padding: 10px;
 }
@@ -613,6 +613,7 @@ text-align: left;
   position:absolute;
   top:0;
   left:0;
+  margin:4px 0 0 4px;
 }
 
 #gender-title{
@@ -620,6 +621,8 @@ text-align: left;
 }
 .gender{
 float:right;
+margin:0;
+font-size: .8rem;
 }
 
 #female-gender{
@@ -633,7 +636,6 @@ float:right;
   border: 1px dashed white;
   border-radius: 0px;
   padding: 3px;
-  margin:4px 0 0 4px;
   color:rgb(204, 204, 204);
 }
 
