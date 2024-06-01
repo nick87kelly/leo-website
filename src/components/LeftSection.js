@@ -22,8 +22,8 @@ const LeftSection = () => {
   ];
   const profileNames = [
     "notacop123",
-    "tapped_in777",
-    "ItsYeBoi68",
+    "tapped_in43",
+    "ItsYeBoi02",
     "vibin_n_thrivin",
     ".oopsie.doopsie",
     "broken_dream_club",
