@@ -53,7 +53,7 @@ function FileComponent(props) {
   return props.type === "video" ? (
     <>
       <div id="file-outer-container">
-        <video playsInline autoPlay muted loop id="myVideo">
+        <video playsInline autoPlay muted loop className="bgVideo">
           <source src={require("../assets/misc/bg10.mp4")} type="video/mp4" />
         </video>
         <ul id="file-inner-container">
@@ -89,7 +89,7 @@ function FileComponent(props) {
     </>
   ) : props.type === "photo" ? (
     <div id="file-outer-container">
-      <video playsInline autoPlay muted loop id="myVideo">
+      <video playsInline autoPlay muted loop className="bgVideo">
         <source src={require("../assets/misc/bg2.mp4")} type="video/mp4" />
       </video>
       <ul id="file-inner-container">
