@@ -1047,6 +1047,12 @@ font-size: .7rem;
 
 }
 
+@media(max-width:1024px){
+  #vol-control{
+    display:none;
+  }
+}
+
 @media (max-width:650px){
   
   #tab-container {
