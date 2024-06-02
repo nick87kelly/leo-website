@@ -2,13 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 
 const LeftSection = () => {
   const [comments, setComments] = useState([
-    "This video is on repeat! Can't get enough!",
-    "2024 and still a bop!",
+    "Keep em comin' 🔥🔥",
     "Who else is here from TikTok?",
-    "This deserves way more views!",
-    "Instantly added to my playlist!",
-    "Anyone else addicted to this?",
-    "Hard! How do I download this?",
+    "Omm we back at it like we never left, stop playing wit bro",
+    "this too hard 😂😂",
+    "🆙 NOW",
+    "Ouwee😂😂",
+    "Let's make it viral 🎉🔥",
   ]);
 
   const profilePics = [

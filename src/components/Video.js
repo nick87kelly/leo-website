@@ -10,11 +10,14 @@ function Video(props) {
     window.open(props.yt, "_blank");
     return false;
   };
-  const handlePlay = () => {
-    videoRef.current.play();
-  };
-  const handlePause = () => {
-    videoRef.current.pause();
+  const handlePausePlay = () => {
+    if (pausePlayIcon === "stop") {
+      videoRef.current.pause();
+      setPausePlayIcon("play_arrow");
+    } else {
+      videoRef.current.play();
+      setPausePlayIcon("stop");
+    }
   };
   const [progress, setProgress] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
@@ -22,6 +25,7 @@ function Video(props) {
   const [resizeLogo, setResizeLogo] = useState("expand_more");
   const [width, setWidth] = useState("0");
   const [canPlay, setCanPlay] = useState(false);
+  const [pausePlayIcon, setPausePlayIcon] = useState("stop");
 
   const handleProgress = (e) => {
     setProgress((e.target.currentTime / e.target.duration) * 100);
@@ -37,6 +41,10 @@ function Video(props) {
       setWidth("90%");
       setResizeLogo("expand_less");
     }
+  };
+
+  const handleVolume = (e) => {
+    videoRef.current.volume = e.target.value / 100;
   };
 
   useEffect(() => {
@@ -122,14 +130,25 @@ function Video(props) {
         </div>
       </div>
       <div id="video-controls">
+        <input
+          id="vol-control"
+          type="range"
+          min="0"
+          max="100"
+          step="1"
+          defaultValue="100"
+          onChange={handleVolume}
+          onInput={handleVolume}
+        ></input>
         <button title="YouTube" id="yt-button" onClick={handleYoutube}>
           <i className="material-symbols-outlined">youtube_activity</i>
         </button>
-        <button title="Play" id="play-button" onClick={handlePlay}>
-          <i className="material-icons">play_arrow</i>
-        </button>
-        <button title="Pause" id="pause-button" onClick={handlePause}>
-          <i className="material-icons">stop</i>
+        <button
+          title="Pause/Play"
+          id="pause-play-button"
+          onClick={handlePausePlay}
+        >
+          <i className="material-icons">{pausePlayIcon}</i>
         </button>
         <progress
           id="video-progress"

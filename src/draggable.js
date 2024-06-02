@@ -11,6 +11,14 @@ export default function dragElement(elmnt) {
     /* otherwise, move the DIV from anywhere inside the DIV:*/
     elmnt.onmousedown = dragMouseDown;
     elmnt.onpointerdown = dragMouseDown;
+    if (elmnt.id === "video-container") {
+      document.getElementById("video-controls").onmousedown = (e) => {
+        e.stopPropagation();
+      };
+      document.getElementById("video-controls").onpointerdown = (e) => {
+        e.stopPropagation();
+      };
+    }
   }
 
   function dragMouseDown(e) {
