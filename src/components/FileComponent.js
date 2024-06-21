@@ -7,26 +7,20 @@ function FileComponent(props) {
   const videoArray = [
     "lazerDim700.mp4",
     "nettspend.mp4",
-    "nettspend2.mp4",
     "shedTheory.mp4",
-    "shedTheory2.mp4",
     "killxero-moxxxie.mp4",
     "freddieGibbs.mp4",
     "dog-cartierGod-ayeshaErotica.mp4",
-    "sinCity-voices.mp4",
     "sinCity-getBack.mp4",
     "sinCity-flyAway.mp4",
   ];
   const ytArray = [
     "https://www.youtube.com/watch?v=BMx9TKez03E",
     "https://www.youtube.com/watch?v=ohf6Bva5jNA",
-    "https://www.youtube.com/watch?v=ohf6Bva5jNA",
-    "https://www.youtube.com/watch?v=2xXJpM2BoNE",
     "https://www.youtube.com/watch?v=2xXJpM2BoNE",
     "https://www.youtube.com/watch?v=5Pdjlu48Zr8",
     "https://www.youtube.com/watch?v=AjWSlrg21Yg",
     "https://www.youtube.com/watch?v=qkFVYFNp4sQ",
-    "https://www.youtube.com/watch?v=SKjHMHsbvAQ",
     "https://www.youtube.com/watch?v=0Q99LJfdGVg",
     "https://www.youtube.com/watch?v=leOS709UPys",
   ];
