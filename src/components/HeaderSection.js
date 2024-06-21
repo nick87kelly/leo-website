@@ -10,8 +10,8 @@ const HeaderSection = () => {
           PORTALS LINKED **** NEURAL INTERFACE CALIBRATION COMPLETE ****
           CEREBRAL CORTEX COMMAND CENTERS ONLINE **** AI SENTIENT ASSISTANTS ON
           STANDBY **** HOLO-MUSIC VISUALIZERS READY **** BRAINWAVE BEAT MAPPING
-          ACTIVE **** CEREBRO-SYNC CONCERTS ALWAYS **** BREAKING INTO THE
-          QUANTUM MUSIC METAVERSE "QMM"{" "}
+          ACTIVE **** CEREBRO-SYNC CONCERTS ALWAYS **** HACKING INTO THE SWAG
+          MONEY METAVERSE "SMM"{" "}
           <span className="leo-name">WE'RE NOT LEAVING</span>{" "}
         </div>
         <div className="marquee__item">
@@ -20,8 +20,8 @@ const HeaderSection = () => {
           PORTALS LINKED **** NEURAL INTERFACE CALIBRATION COMPLETE ****
           CEREBRAL CORTEX COMMAND CENTERS ONLINE **** AI SENTIENT ASSISTANTS ON
           STANDBY **** HOLO-MUSIC VISUALIZERS READY **** BRAINWAVE BEAT MAPPING
-          ACTIVE **** CEREBRO-SYNC CONCERTS ALWAYS **** BREAKING INTO THE
-          QUANTUM MUSIC METAVERSE "QMM"{" "}
+          ACTIVE **** CEREBRO-SYNC CONCERTS ALWAYS **** HACKING INTO THE SWAG
+          MONEY METAVERSE "SMM"{" "}
           <span className="leo-name">WE'RE NOT LEAVING</span>{" "}
         </div>
       </div>
