@@ -1,19 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.d95ca313.css",
-    "main.js": "/static/js/main.352e7af1.js",
+    "main.js": "/static/js/main.d42dd917.js",
     "static/js/592.1c8d275f.chunk.js": "/static/js/592.1c8d275f.chunk.js",
-    "static/media/nettspend2.mp4": "/static/media/nettspend2.cadbacc9761dc14779e9.mp4",
     "static/media/freddieGibbs.mp4": "/static/media/freddieGibbs.d55d83dba2d6b99ad664.mp4",
     "static/media/killxero-moxxxie.mp4": "/static/media/killxero-moxxxie.c5c2e582122993eab075.mp4",
     "static/media/dog-cartierGod-ayeshaErotica.mp4": "/static/media/dog-cartierGod-ayeshaErotica.79329fd8d1412c7c3de0.mp4",
     "static/media/sinCity-getBack.mp4": "/static/media/sinCity-getBack.e03c133ed1f768544fc0.mp4",
     "static/media/sinCity-flyAway.mp4": "/static/media/sinCity-flyAway.fd152ae9bf3ed8655842.mp4",
-    "static/media/shedTheory2.mp4": "/static/media/shedTheory2.5fd8e3c3c1f25bfec77c.mp4",
-    "static/media/sinCity-voices.mp4": "/static/media/sinCity-voices.2fba4b785e5c1d0a4127.mp4",
+    "static/media/shedTheory.mp4": "/static/media/shedTheory.5fd8e3c3c1f25bfec77c.mp4",
     "static/media/lazerDim700.mp4": "/static/media/lazerDim700.523e13d6f83b91c92b09.mp4",
     "static/media/nettspend.mp4": "/static/media/nettspend.a8965752f77e249dc66d.mp4",
-    "static/media/shedTheory.mp4": "/static/media/shedTheory.ccfeff22a681ab14282f.mp4",
     "static/media/man3.jpg": "/static/media/man3.05af51766a3031667fe9.jpg",
     "static/media/face.webm": "/static/media/face.ffaaaa69e8932a574cea.webm",
     "static/media/2.jpg": "/static/media/2.d13c39aaea2fddb6c962.jpg",
@@ -61,11 +58,11 @@
     "static/media/bg10.mp4": "/static/media/bg10.8bea5b7e2259d1682c60.mp4",
     "index.html": "/index.html",
     "main.d95ca313.css.map": "/static/css/main.d95ca313.css.map",
-    "main.352e7af1.js.map": "/static/js/main.352e7af1.js.map",
+    "main.d42dd917.js.map": "/static/js/main.d42dd917.js.map",
     "592.1c8d275f.chunk.js.map": "/static/js/592.1c8d275f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d95ca313.css",
-    "static/js/main.352e7af1.js"
+    "static/js/main.d42dd917.js"
   ]
 }
