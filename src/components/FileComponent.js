@@ -5,24 +5,30 @@ import videoLogoFlash from "../assets/misc/flash.png";
 function FileComponent(props) {
   const imgTotal = 23;
   const videoArray = [
-    "lazerDim700.mp4",
     "nettspend.mp4",
+    "jobandikas-nsdSparks.mp4",
+    "lazerDim700.mp4",
+    "jobandikas--wakandaForever.mp4",
     "shedTheory.mp4",
-    "killxero-moxxxie.mp4",
+    "killxero--moxxxie.mp4",
     "freddieGibbs.mp4",
     "dog-cartierGod-ayeshaErotica.mp4",
-    "sinCity-getBack.mp4",
-    "sinCity-flyAway.mp4",
+    "sinCity--getBack.mp4",
+    "sadaBaby.mp4",
+    "sinCity--flyAway.mp4",
   ];
   const ytArray = [
-    "https://www.youtube.com/watch?v=BMx9TKez03E",
-    "https://www.youtube.com/watch?v=ohf6Bva5jNA",
-    "https://www.youtube.com/watch?v=2xXJpM2BoNE",
-    "https://www.youtube.com/watch?v=5Pdjlu48Zr8",
-    "https://www.youtube.com/watch?v=AjWSlrg21Yg",
-    "https://www.youtube.com/watch?v=qkFVYFNp4sQ",
-    "https://www.youtube.com/watch?v=0Q99LJfdGVg",
-    "https://www.youtube.com/watch?v=leOS709UPys",
+    "https://www.youtube.com/watch?v=ohf6Bva5jNA", //nett
+    "https://www.youtube.com/watch?v=V0d27erjHL4", //jobandikas-nsdSparks
+    "https://www.youtube.com/watch?v=BMx9TKez03E", //lazer
+    "https://www.youtube.com/watch?v=EciJEUU9zc0", //jobandikas
+    "https://www.youtube.com/watch?v=2xXJpM2BoNE", //shed
+    "https://www.youtube.com/watch?v=5Pdjlu48Zr8", //killxero
+    "https://www.youtube.com/watch?v=AjWSlrg21Yg", //freddie
+    "https://www.youtube.com/watch?v=qkFVYFNp4sQ", //dog-cartier-ayeshaErotica
+    "https://www.youtube.com/watch?v=0Q99LJfdGVg", //getBack
+    "https://www.youtube.com/watch?v=lBtEhIXTz5I", //sadaBaby
+    "https://www.youtube.com/watch?v=leOS709UPys", //flyAway
   ];
   function handleVideoClick(t, yt, u) {
     props.playVideo(true);
