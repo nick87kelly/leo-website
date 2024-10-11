@@ -5,10 +5,10 @@ import videoLogoFlash from "../assets/misc/flash.png";
 function FileComponent(props) {
   const imgTotal = 23;
   const videoArray = [
-    "nettspend.mp4",
-    "jobandikas-nsdSparks.mp4",
-    "lazerDim700.mp4",
     "jobandikas--wakandaForever.mp4",
+    "lazerDim700.mp4",
+    "jobandikas-nsdSparks.mp4",
+    "nettspend.mp4",
     "shedTheory.mp4",
     "killxero--moxxxie.mp4",
     "freddieGibbs.mp4",
@@ -18,10 +18,10 @@ function FileComponent(props) {
     "sinCity--flyAway.mp4",
   ];
   const ytArray = [
-    "https://www.youtube.com/watch?v=ohf6Bva5jNA", //nett
-    "https://www.youtube.com/watch?v=V0d27erjHL4", //jobandikas-nsdSparks
-    "https://www.youtube.com/watch?v=BMx9TKez03E", //lazer
     "https://www.youtube.com/watch?v=EciJEUU9zc0", //jobandikas
+    "https://www.youtube.com/watch?v=BMx9TKez03E", //lazer
+    "https://www.youtube.com/watch?v=V0d27erjHL4", //jobandikas-nsdSparks
+    "https://www.youtube.com/watch?v=ohf6Bva5jNA", //nett
     "https://www.youtube.com/watch?v=2xXJpM2BoNE", //shed
     "https://www.youtube.com/watch?v=5Pdjlu48Zr8", //killxero
     "https://www.youtube.com/watch?v=AjWSlrg21Yg", //freddie
