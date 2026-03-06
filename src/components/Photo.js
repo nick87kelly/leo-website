@@ -2,11 +2,14 @@ import React, { useRef, useState, useEffect } from "react";
 import { useSanityData } from "../hooks/useSanityData";
 import dragElement from "../draggable";
 
-const PERSONAL_INFO_QUERY = '*[_id == "personalInfo"][0] { instagramName }';
+const PERSONAL_INFO_QUERY =
+  '*[_id == "personalInfo"][0] { instagramName, instagramUrl }';
 
 function Photo(props) {
   const { data: personalInfo } = useSanityData(PERSONAL_INFO_QUERY);
   const instagramName = personalInfo?.instagramName || "leodayung0g";
+  const instagramUrl =
+    personalInfo?.instagramUrl || "https://www.instagram.com/leodayung0g/";
   const photoContainerRef = useRef();
   const [likes, setLikes] = useState(Math.floor(Math.random() * 10000));
   const [likeIcon, setLikeIcon] = useState("favorite_border");
@@ -45,12 +48,8 @@ function Photo(props) {
     >
       <div id="photo-header">
         <div id="username">
-          <a
-            href="https://www.instagram.com/leodayung0g_/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            leodayung0g_
+          <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
+            {instagramName}
           </a>
         </div>
         <button
