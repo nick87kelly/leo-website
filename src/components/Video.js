@@ -7,8 +7,18 @@ function Video(props) {
   const videoRef = useRef();
   const visualizerRef = useRef();
   const handleYoutube = () => {
-    window.open(props.yt, "_blank");
-    return false;
+    try {
+      const url = new URL(props.yt);
+      if (
+        url.hostname === "www.youtube.com" ||
+        url.hostname === "youtube.com" ||
+        url.hostname === "youtu.be"
+      ) {
+        window.open(props.yt, "_blank", "noopener,noreferrer");
+      }
+    } catch {
+      // Invalid URL, do nothing
+    }
   };
   const handlePausePlay = () => {
     if (pausePlayIcon === "stop") {
@@ -22,7 +32,7 @@ function Video(props) {
   const [progress, setProgress] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [resizeLogo, setResizeLogo] = useState("expand_more");
+  const [resizeLogo, setResizeLogo] = useState("expand_less");
   const [width, setWidth] = useState("0");
   const [canPlay, setCanPlay] = useState(false);
   const [pausePlayIcon, setPausePlayIcon] = useState("stop");
@@ -34,12 +44,32 @@ function Video(props) {
   };
 
   const handleResize = () => {
-    if (resizeLogo === "expand_less") {
+    if (resizeLogo === "expand_more") {
       setWidth("0");
-      setResizeLogo("expand_more");
+      setResizeLogo("expand_less");
     } else {
       setWidth("90%");
-      setResizeLogo("expand_less");
+      setResizeLogo("expand_more");
+    }
+  };
+
+  const handleScrub = (e) => {
+    const newTime = (e.target.value / 100) * duration;
+    videoRef.current.currentTime = newTime;
+    setProgress(Number(e.target.value));
+  };
+
+  const wasPlayingRef = useRef(false);
+
+  const handleScrubStart = () => {
+    wasPlayingRef.current = !videoRef.current.paused;
+    videoRef.current.pause();
+    setPausePlayIcon("play_arrow");
+  };
+  const handleScrubEnd = () => {
+    if (wasPlayingRef.current) {
+      videoRef.current.play();
+      setPausePlayIcon("stop");
     }
   };
 
@@ -48,7 +78,7 @@ function Video(props) {
   };
 
   useEffect(() => {
-    new AudioMotionAnalyzer(visualizerRef.current, {
+    const analyzer = new AudioMotionAnalyzer(visualizerRef.current, {
       source: videoRef.current,
       ansiBands: false,
       showScaleX: false,
@@ -65,6 +95,7 @@ function Video(props) {
       reflexBright: 1,
     });
     dragElement(videoContainerRef.current);
+    return () => analyzer.destroy();
   }, []);
 
   useEffect(() => {
@@ -72,23 +103,28 @@ function Video(props) {
   }, [props.url]);
 
   return (
-    <div id="video-container" ref={videoContainerRef}>
+    <div
+      id="video-container"
+      ref={videoContainerRef}
+      style={{ zIndex: props.zIndex }}
+      onPointerDown={props.bringToFront}
+    >
       <div id="video-header">
         <div id="video-title">{props.title}</div>
         <div id="video-header-controls">
-          <button id="video-resize" onClick={handleResize}>
+          <button
+            id="video-resize"
+            onClick={handleResize}
+            aria-label="Resize video player"
+          >
             <i className="material-icons">{resizeLogo}</i>
           </button>
           <button
             id="video-exit"
             onClick={() => {
-              Array.from(document.querySelectorAll(".file-name")).forEach(
-                function (el) {
-                  el.classList.remove("active");
-                }
-              );
               props.playVideo(false);
             }}
+            aria-label="Close video player"
           >
             <i className="material-icons">close</i>
           </button>
@@ -101,11 +137,12 @@ function Video(props) {
         playsInline
         loop
         autoPlay
+        crossOrigin="anonymous"
         onTimeUpdate={handleProgress}
         ref={videoRef}
         onCanPlayThrough={() => {
           setCanPlay(true);
-          if (resizeLogo === "expand_more") {
+          if (resizeLogo === "expand_less") {
             handleResize();
           }
         }}
@@ -139,22 +176,39 @@ function Video(props) {
           defaultValue="100"
           onChange={handleVolume}
           onInput={handleVolume}
+          aria-label="Volume control"
         ></input>
-        <button title="YouTube" id="yt-button" onClick={handleYoutube}>
-          <i className="material-symbols-outlined">youtube_activity</i>
+        <button
+          title="YouTube"
+          id="yt-button"
+          onClick={handleYoutube}
+          aria-label="Open on YouTube"
+        >
+          <i className="material-icons">smart_display</i>
         </button>
         <button
           title="Pause/Play"
           id="pause-play-button"
           onClick={handlePausePlay}
+          aria-label="Pause or play video"
         >
           <i className="material-icons">{pausePlayIcon}</i>
         </button>
-        <progress
+        <input
           id="video-progress"
+          type="range"
+          min="0"
           max="100"
+          step="0.1"
           value={isNaN(duration) ? 0 : progress}
-        ></progress>
+          onChange={handleScrub}
+          onInput={handleScrub}
+          onPointerDown={handleScrubStart}
+          onPointerUp={handleScrubEnd}
+          onPointerCancel={handleScrubEnd}
+          aria-label="Video progress"
+          style={{ "--progress": `${isNaN(duration) ? 0 : progress}%` }}
+        ></input>
       </div>
     </div>
   );

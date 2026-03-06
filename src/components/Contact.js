@@ -1,6 +1,20 @@
 import React, { useState, useEffect } from "react";
+import { useSanityData } from "../hooks/useSanityData";
+
+const PERSONAL_INFO_QUERY =
+  '*[_id == "personalInfo"][0] { email, instagramName, instagramUrl, youtubeName, youtubeUrl }';
 
 function Contact() {
+  const { data: personalInfo } = useSanityData(PERSONAL_INFO_QUERY);
+
+  const email = personalInfo?.email || "leogiron075@gmail.com";
+  const instagramName = personalInfo?.instagramName || "leodayung0g";
+  const instagramUrl =
+    personalInfo?.instagramUrl || "https://www.instagram.com/leodayung0g/";
+  const youtubeName = personalInfo?.youtubeName || "leogiron02";
+  const youtubeUrl =
+    personalInfo?.youtubeUrl || "https://www.youtube.com/@leogiron02";
+
   const contactLogo = require("../assets/misc/face.webm");
   const dnaLogo = require("../assets/misc/dna.webm");
   const defaultLogo = require("../assets/profilePics/default.png");
@@ -13,7 +27,7 @@ function Contact() {
       [..."abcdefghijklmnopqrsuvwxyzABCDEFGHIJKLMNOPQRSUVWXYZ0123456789"]
         .map((e, i, a) => a[Math.floor(Math.random() * a.length)])
         .join("")
-        .slice(0, userIdLength)
+        .slice(0, userIdLength),
   );
   const [loader, setLoader] = useState(true);
   const [age, setAge] = useState(0);
@@ -29,7 +43,7 @@ function Contact() {
 
       setUserId(
         (prev) =>
-          prev.substring(0, newIndex) + newChar + prev.substring(newIndex + 1)
+          prev.substring(0, newIndex) + newChar + prev.substring(newIndex + 1),
       );
     }, 100);
 
@@ -58,16 +72,24 @@ function Contact() {
             src={batteryLogo}
             style={{ height: "200%" }}
             id="contact-battery"
-            alt="uh oh"
+            alt="Battery indicator"
           />
         </div>
         <div id="left-fingerprint">
           <div className="fingerprint-info">L</div>
-          <img src={leftFp} className="fingerprint-img" alt="uh oh" />
+          <img
+            src={leftFp}
+            className="fingerprint-img"
+            alt="Left fingerprint scan"
+          />
         </div>
         <div id="right-fingerprint">
           <div className="fingerprint-info">R</div>
-          <img src={rightFp} className="fingerprint-img" alt="uh oh" />
+          <img
+            src={rightFp}
+            className="fingerprint-img"
+            alt="Right fingerprint scan"
+          />
         </div>
         <div id="face-scan">
           <video
@@ -86,7 +108,7 @@ function Contact() {
             src={defaultLogo}
             style={{ display: loader ? "block" : "none" }}
             className="default-loader"
-            alt="uh oh"
+            alt="Face scan placeholder"
           />
           <div id="face-scan-bar"></div>
         </div>
@@ -143,17 +165,17 @@ function Contact() {
                 Math.floor((((age % 31556952) % 2629746) % 604800) / 86400) +
                 "d " +
                 Math.floor(
-                  ((((age % 31556952) % 2629746) % 604800) % 86400) / 3600
+                  ((((age % 31556952) % 2629746) % 604800) % 86400) / 3600,
                 ) +
                 "h " +
                 Math.floor(
                   (((((age % 31556952) % 2629746) % 604800) % 86400) % 3600) /
-                    60
+                    60,
                 ) +
                 "m " +
                 Math.floor(
                   (((((age % 31556952) % 2629746) % 604800) % 86400) % 3600) %
-                    60
+                    60,
                 ) +
                 "s"}
             </div>
@@ -171,11 +193,11 @@ function Contact() {
             <div id="contact-email">
               <address>
                 <a
-                  href="mailto:leogiron075@gmail.com"
+                  href={`mailto:${email}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  leogiron075@gmail.com
+                  {email}
                 </a>
               </address>
             </div>
@@ -185,12 +207,8 @@ function Contact() {
               instagram:
             </div>
             <div id="contact-instagram">
-              <a
-                href="https://www.instagram.com/leodayung0g_/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                leodayung0g_
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
+                @{instagramName}
               </a>
             </div>
           </div>
@@ -199,12 +217,8 @@ function Contact() {
               youtube:
             </div>
             <div id="contact-youtube">
-              <a
-                href="https://www.youtube.com/@leogiron02"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                leogiron02
+              <a href={youtubeUrl} target="_blank" rel="noopener noreferrer">
+                {youtubeName}
               </a>
             </div>
           </div>

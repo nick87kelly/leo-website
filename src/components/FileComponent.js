@@ -1,53 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSanityData } from "../hooks/useSanityData";
 import videoLogo from "../assets/misc/videoLogo.png";
 import videoLogoFlash from "../assets/misc/flash.png";
 
+const VIDEO_QUERY = `*[_type == "videoDocument"] | order(orderRank asc) {
+  _id, title, fileName, "videoUrl": videoFile.asset->url, youtubeLink, orderRank
+}`;
+
+const PHOTO_QUERY = `*[_type == "photoDocument"] | order(orderRank asc) {
+  _id, "imageUrl": image.asset->url, caption, orderRank
+}`;
+
 function FileComponent(props) {
-  const imgTotal = 23;
-  const videoArray = [
-    "jobandikas--wakandaForever.mp4",
-    "lazerDim700.mp4",
-    "jobandikas-nsdSparks.mp4",
-    "nettspend.mp4",
-    "shedTheory.mp4",
-    "killxero--moxxxie.mp4",
-    "freddieGibbs.mp4",
-    "dog-cartierGod-ayeshaErotica.mp4",
-    "sinCity--getBack.mp4",
-    "sadaBaby.mp4",
-    "sinCity--flyAway.mp4",
-  ];
-  const ytArray = [
-    "https://www.youtube.com/watch?v=EciJEUU9zc0", //jobandikas
-    "https://www.youtube.com/watch?v=BMx9TKez03E", //lazer
-    "https://www.youtube.com/watch?v=V0d27erjHL4", //jobandikas-nsdSparks
-    "https://www.youtube.com/watch?v=ohf6Bva5jNA", //nett
-    "https://www.youtube.com/watch?v=2xXJpM2BoNE", //shed
-    "https://www.youtube.com/watch?v=5Pdjlu48Zr8", //killxero
-    "https://www.youtube.com/watch?v=AjWSlrg21Yg", //freddie
-    "https://www.youtube.com/watch?v=qkFVYFNp4sQ", //dog-cartier-ayeshaErotica
-    "https://www.youtube.com/watch?v=0Q99LJfdGVg", //getBack
-    "https://www.youtube.com/watch?v=lBtEhIXTz5I", //sadaBaby
-    "https://www.youtube.com/watch?v=leOS709UPys", //flyAway
-  ];
+  const query = props.type === "video" ? VIDEO_QUERY : PHOTO_QUERY;
+  const { data, loading, error } = useSanityData(query);
+  const [activeFile, setActiveFile] = useState(null);
+
   function handleVideoClick(t, yt, u) {
     props.playVideo(true);
-    props.showPhoto(false);
     props.setTitle(t);
     props.setUrl(u);
     props.setYt(yt);
-    Array.from(document.querySelectorAll(".file-name")).forEach(function (el) {
-      el.classList.remove("active");
-    });
-    document.getElementById(t).classList.add("active");
+    if (props.bringToFront) props.bringToFront();
+    setActiveFile(t);
   }
-  function handlePhotoClick(u) {
+
+  function handlePhotoClick(u, c) {
     props.showPhoto(true);
-    props.playVideo(false);
     props.setUrl(u);
-    Array.from(document.querySelectorAll(".file-name")).forEach(function (el) {
-      el.classList.remove("active");
-    });
+    if (props.setCaption) props.setCaption(c || "");
+    if (props.bringToFront) props.bringToFront();
+    setActiveFile(null);
+  }
+
+  if (loading) {
+    return <div className="loading-state">Loading...</div>;
+  }
+
+  if (error) {
+    return <div className="error-state">Unable to load content</div>;
   }
 
   return props.type === "video" ? (
@@ -56,35 +47,61 @@ function FileComponent(props) {
         <video playsInline autoPlay muted loop className="bgVideo">
           <source src={require("../assets/misc/bg10.mp4")} type="video/mp4" />
         </video>
-        <ul id="file-inner-container">
-          {videoArray.map((e, i) => (
-            <li key={i} className="file">
-              <div
-                className="file-icon-container"
-                onClick={(e) => {
-                  handleVideoClick(
-                    videoArray[i],
-                    ytArray[i],
-                    require(`../assets/videos/${videoArray[i]}`)
-                  );
-                }}
-              >
-                <div id="video-icon-holder">
-                  <img className="video-logo" src={videoLogo} alt="uh oh"></img>
-                  <img
-                    className="video-logo-flash"
-                    src={videoLogoFlash}
-                    alt="uh oh"
-                  ></img>
-                </div>
+        {data.length === 0 ? (
+          <div className="empty-state">No videos yet</div>
+        ) : (
+          <ul id="file-inner-container">
+            {data.map((video) => (
+              <li key={video._id} className="file">
+                <div
+                  className="file-icon-container"
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Play video ${video.fileName}`}
+                  onClick={() => {
+                    handleVideoClick(
+                      video.title,
+                      video.youtubeLink,
+                      video.videoUrl,
+                    );
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      handleVideoClick(
+                        video.title,
+                        video.youtubeLink,
+                        video.videoUrl,
+                      );
+                    }
+                  }}
+                >
+                  <div id="video-icon-holder">
+                    <img
+                      className="video-logo"
+                      src={videoLogo}
+                      alt="Video file icon"
+                    ></img>
+                    <img
+                      className="video-logo-flash"
+                      src={videoLogoFlash}
+                      alt="Video file icon flash"
+                    ></img>
+                  </div>
 
-                <div id={videoArray[i]} className="file-name">
-                  {videoArray[i]}
+                  <div
+                    className={
+                      "file-name" +
+                      (activeFile === video.title ? " active" : "")
+                    }
+                  >
+                    {video.fileName}
+                  </div>
                 </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </>
   ) : props.type === "photo" ? (
@@ -92,28 +109,44 @@ function FileComponent(props) {
       <video playsInline autoPlay muted loop className="bgVideo">
         <source src={require("../assets/misc/bg2.mp4")} type="video/mp4" />
       </video>
-      <ul id="file-inner-container">
-        {[...Array(imgTotal)].map((e, i) => (
-          <li key={i} className="file">
-            <div
-              className="file-icon-container"
-              onClick={(e) => {
-                handlePhotoClick(require(`../assets/photos/${i + 1}.jpg`));
-              }}
-            >
-              <div className="image-outer-container">
-                <div className="image-inner-container">
-                  <img
-                    className="photo-logo"
-                    src={require(`../assets/photos/${i + 1}.jpg`)}
-                    alt="uh oh"
-                  ></img>
+      {data.length === 0 ? (
+        <div className="empty-state">No photos yet</div>
+      ) : (
+        <ul id="file-inner-container">
+          {data.map((photo) => (
+            <li key={photo._id} className="file">
+              <div
+                className="file-icon-container"
+                role="button"
+                tabIndex={0}
+                aria-label={
+                  photo.caption ? `View photo: ${photo.caption}` : "View photo"
+                }
+                onClick={() => {
+                  handlePhotoClick(photo.imageUrl, photo.caption);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    handlePhotoClick(photo.imageUrl, photo.caption);
+                  }
+                }}
+              >
+                <div className="image-outer-container">
+                  <div className="image-inner-container">
+                    <img
+                      className="photo-logo"
+                      loading="lazy"
+                      src={photo.imageUrl}
+                      alt={photo.caption || "Photo"}
+                    ></img>
+                  </div>
                 </div>
               </div>
-            </div>
-          </li>
-        ))}
-      </ul>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   ) : (
     <></>

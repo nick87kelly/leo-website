@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { sanitizeText } from "../utils/sanitize";
 
 const LeftSection = () => {
   const [comments, setComments] = useState([
@@ -39,7 +40,7 @@ const LeftSection = () => {
   };
 
   const commentHandle = (c) => {
-    setComments([...comments, c]);
+    setComments([...comments, sanitizeText(c)]);
     setInputValue("");
   };
   const scrollToBottom = () => {
@@ -61,7 +62,7 @@ const LeftSection = () => {
       <div className="body" id="left-body">
         {comments.map((e, i) => (
           <div
-            ref={i == comments.length - 1 ? lastComment : null}
+            ref={i === comments.length - 1 ? lastComment : null}
             key={i}
             className="post"
           >
@@ -72,7 +73,10 @@ const LeftSection = () => {
                   ? require(`../assets/profilePics/${profilePics[i]}`)
                   : require("../assets/profilePics/default.png")
               }
-              alt="uh oh"
+              alt={
+                "Profile picture for " +
+                (i < profileNames.length ? profileNames[i] : "user_unknown")
+              }
             />
             <div className="post-details">
               <p className="username">
@@ -90,15 +94,13 @@ const LeftSection = () => {
           value={inputValue}
           onChange={handleInputChange}
           onKeyUp={(e) =>
-            e.key === "Enter" || e.keyCode === 13
-              ? commentHandle(inputValue)
-              : null
+            e.key === "Enter" ? commentHandle(inputValue) : null
           }
           placeholder="What's on your mind?"
         ></input>
         <button
           id="comment-btn"
-          onClick={() => (inputValue != "" ? commentHandle(inputValue) : null)}
+          onClick={() => (inputValue !== "" ? commentHandle(inputValue) : null)}
         >
           Comment
         </button>

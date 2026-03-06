@@ -1,0 +1,26 @@
+{
+  "name": "sanity-studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Sanity Studio for the portfolio site",
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build",
+    "deploy": "sanity deploy"
+  },
+  "dependencies": {
+    "@sanity/orderable-document-list": "^1.2.2",
+    "@sanity/vision": "^3.57.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sanity": "^3.57.0",
+    "styled-components": "^6.1.13"
+  },
+  "devDependencies": {
+    "@sanity/eslint-config-studio": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

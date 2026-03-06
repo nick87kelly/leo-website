@@ -1,7 +1,12 @@
 import React, { useRef, useState, useEffect } from "react";
+import { useSanityData } from "../hooks/useSanityData";
 import dragElement from "../draggable";
 
+const PERSONAL_INFO_QUERY = '*[_id == "personalInfo"][0] { instagramName }';
+
 function Photo(props) {
+  const { data: personalInfo } = useSanityData(PERSONAL_INFO_QUERY);
+  const instagramName = personalInfo?.instagramName || "leodayung0g";
   const photoContainerRef = useRef();
   const [likes, setLikes] = useState(Math.floor(Math.random() * 10000));
   const [likeIcon, setLikeIcon] = useState("favorite_border");
@@ -32,7 +37,12 @@ function Photo(props) {
   };
 
   return (
-    <div id="photo-container" ref={photoContainerRef}>
+    <div
+      id="photo-container"
+      ref={photoContainerRef}
+      style={{ zIndex: props.zIndex }}
+      onPointerDown={props.bringToFront}
+    >
       <div id="photo-header">
         <div id="username">
           <a
@@ -48,14 +58,15 @@ function Photo(props) {
           onClick={() => {
             props.showPhoto(false);
           }}
+          aria-label="Close photo viewer"
         >
           <i className="material-icons">close</i>
         </button>
       </div>
-      <img id="selected-photo" src={props.url} alt="uh oh" />
+      <img id="selected-photo" src={props.url} alt="Selected photo" />
       <div id="photo-data-container">
         <div id="photo-interact">
-          <button id="like-button" onClick={handleLike}>
+          <button id="like-button" onClick={handleLike} aria-label="Like photo">
             <i
               style={{ color: likeIcon === "favorite" ? "#a10202" : "white" }}
               className="material-icons"
@@ -63,7 +74,11 @@ function Photo(props) {
               {likeIcon}
             </i>
           </button>
-          <button id="comment-button" onClick={handleComment}>
+          <button
+            id="comment-button"
+            onClick={handleComment}
+            aria-label="Comment on photo"
+          >
             <i className="material-icons">message</i>
           </button>
         </div>
@@ -78,6 +93,12 @@ function Photo(props) {
           </a>{" "}
           and {likes} others
         </div>
+        {props.caption && (
+          <div id="photo-caption">
+            <span style={{ fontWeight: "bold" }}>{instagramName}:</span>{" "}
+            {props.caption}
+          </div>
+        )}
       </div>
     </div>
   );

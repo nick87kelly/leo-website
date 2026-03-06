@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import "./App.css";
 import HeaderSection from "./components/HeaderSection";
 import IconSection from "./components/IconSection";
@@ -11,11 +11,24 @@ import Photo from "./components/Photo";
 const App = () => {
   const tabs = ["Videos", "Photos", "Contact"];
   const [currentTab, setCurrentTab] = useState("Videos");
-  const [url, setUrl] = useState(null);
+  const [videoUrl, setVideoUrl] = useState(null);
+  const [photoUrl, setPhotoUrl] = useState(null);
   const [title, setTitle] = useState(null);
   const [video, setVideo] = useState(false);
   const [photo, setPhoto] = useState(false);
   const [yt, setYt] = useState("");
+  const [caption, setCaption] = useState("");
+  const zCounter = useRef(11);
+  const [videoZ, setVideoZ] = useState(10);
+  const [photoZ, setPhotoZ] = useState(10);
+  const bringVideoToFront = useCallback(() => {
+    zCounter.current += 1;
+    setVideoZ(zCounter.current);
+  }, []);
+  const bringPhotoToFront = useCallback(() => {
+    zCounter.current += 1;
+    setPhotoZ(zCounter.current);
+  }, []);
   return (
     <div className="body" id="main-container">
       <HeaderSection></HeaderSection>
@@ -24,11 +37,15 @@ const App = () => {
       <MainSection
         curr={currentTab}
         tabs={tabs}
-        setUrl={setUrl}
+        setVideoUrl={setVideoUrl}
+        setPhotoUrl={setPhotoUrl}
         setTitle={setTitle}
         showPhoto={setPhoto}
         playVideo={setVideo}
         setYt={setYt}
+        setCaption={setCaption}
+        bringVideoToFront={bringVideoToFront}
+        bringPhotoToFront={bringPhotoToFront}
       ></MainSection>
       <TabSection
         curr={currentTab}
@@ -36,11 +53,28 @@ const App = () => {
         tabs={tabs}
       ></TabSection>
       {video ? (
-        <Video url={url} title={title} yt={yt} playVideo={setVideo} />
+        <Video
+          url={videoUrl}
+          title={title}
+          yt={yt}
+          playVideo={setVideo}
+          zIndex={videoZ}
+          bringToFront={bringVideoToFront}
+        />
       ) : (
         <></>
       )}
-      {photo ? <Photo url={url} showPhoto={setPhoto} /> : <></>}
+      {photo ? (
+        <Photo
+          url={photoUrl}
+          caption={caption}
+          showPhoto={setPhoto}
+          zIndex={photoZ}
+          bringToFront={bringPhotoToFront}
+        />
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

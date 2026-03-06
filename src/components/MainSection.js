@@ -17,18 +17,21 @@ const MainSection = (props) => {
               >
                 {tab === "Videos" ? (
                   <FileComponent
-                    setUrl={props.setUrl}
+                    setUrl={props.setVideoUrl}
                     setTitle={props.setTitle}
                     showPhoto={props.showPhoto}
                     playVideo={props.playVideo}
                     setYt={props.setYt}
+                    bringToFront={props.bringVideoToFront}
                     type="video"
                   />
                 ) : tab === "Photos" ? (
                   <FileComponent
-                    setUrl={props.setUrl}
+                    setUrl={props.setPhotoUrl}
                     showPhoto={props.showPhoto}
                     playVideo={props.playVideo}
+                    setCaption={props.setCaption}
+                    bringToFront={props.bringPhotoToFront}
                     type="photo"
                   />
                 ) : (
